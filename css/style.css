@@ -1,0 +1,284 @@
+/* 基础样式重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Crimson Text', serif;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #1e3c72 100%);
+    color: #fff;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* 雪花效果 */
+.snowflakes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.snowflake {
+    position: absolute;
+    top: -10%;
+    color: #fff;
+    font-size: 1.5em;
+    animation: fall linear infinite;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-100vh);
+    }
+    to {
+        transform: translateY(100vh);
+    }
+}
+
+.snowflake:nth-child(1) { left: 10%; animation-duration: 10s; }
+.snowflake:nth-child(2) { left: 20%; animation-duration: 12s; animation-delay: 1s; }
+.snowflake:nth-child(3) { left: 30%; animation-duration: 9s; animation-delay: 2s; }
+.snowflake:nth-child(4) { left: 40%; animation-duration: 11s; animation-delay: 0.5s; }
+.snowflake:nth-child(5) { left: 50%; animation-duration: 13s; animation-delay: 1.5s; }
+.snowflake:nth-child(6) { left: 60%; animation-duration: 10s; animation-delay: 0.8s; }
+.snowflake:nth-child(7) { left: 70%; animation-duration: 14s; animation-delay: 2.5s; }
+.snowflake:nth-child(8) { left: 80%; animation-duration: 11s; animation-delay: 1.2s; }
+.snowflake:nth-child(9) { left: 90%; animation-duration: 9s; animation-delay: 0.3s; }
+.snowflake:nth-child(10) { left: 95%; animation-duration: 12s; animation-delay: 2s; }
+
+/* 头部样式 */
+header {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.3);
+}
+
+.main-title {
+    font-family: 'Cinzel', serif;
+    font-size: 4em;
+    font-weight: 600;
+    color: #ffd700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 1.5em;
+    font-style: italic;
+    color: #fff;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* 主容器 */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    position: relative;
+}
+
+/* 圣母像区域 */
+.mary-section {
+    text-align: center;
+    margin-bottom: 60px;
+    position: relative;
+}
+
+.star-decoration {
+    font-size: 3em;
+    margin-bottom: 20px;
+    animation: twinkle 2s ease-in-out infinite;
+}
+
+@keyframes twinkle {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+}
+
+.mary-container {
+    position: relative;
+    display: inline-block;
+}
+
+.mary-image {
+    width: 400px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    border: 5px solid #ffd700;
+}
+
+.glow-effect {
+    position: absolute;
+    top: -20px;
+    left: -20px;
+    right: -20px;
+    bottom: -20px;
+    background: radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, transparent 70%);
+    animation: glow 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+}
+
+/* 祷词区域 */
+.prayers-section {
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-family: 'Cinzel', serif;
+    font-size: 2.5em;
+    text-align: center;
+    color: #ffd700;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.prayer-card {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 215, 0, 0.5);
+    border-radius: 15px;
+    padding: 30px;
+    margin-bottom: 30px;
+    backdrop-filter: blur(5px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.prayer-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
+}
+
+.prayer-card h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 1.8em;
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.prayer-text {
+    font-size: 1.2em;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* 装饰元素 */
+.decorations {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.decoration-tree {
+    position: absolute;
+    width: 150px;
+    height: 200px;
+    object-fit: cover;
+    opacity: 0.3;
+}
+
+.decoration-tree.left {
+    top: 100px;
+    left: 0;
+}
+
+.decoration-tree.right {
+    top: 100px;
+    right: 0;
+}
+
+.candle {
+    position: absolute;
+    width: 80px;
+    height: 120px;
+    object-fit: contain;
+    opacity: 0.5;
+    animation: flicker 2s ease-in-out infinite;
+}
+
+@keyframes flicker {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 0.8; }
+}
+
+.candle.left {
+    bottom: 200px;
+    left: 50px;
+}
+
+.candle.right {
+    bottom: 200px;
+    right: 50px;
+}
+
+/* 底部 */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    background: rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.angel-decoration {
+    margin-bottom: 20px;
+}
+
+.angel {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+.blessing {
+    font-size: 1.5em;
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.year {
+    font-family: 'Cinzel', serif;
+    font-size: 1.2em;
+    color: #ffd700;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .main-title {
+        font-size: 2.5em;
+    }
+    
+    .mary-image {
+        width: 300px;
+        height: 375px;
+    }
+    
+    .prayer-card {
+        padding: 20px;
+    }
+    
+    .decoration-tree {
+        display: none;
+    }
+}

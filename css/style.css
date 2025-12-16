@@ -83,8 +83,8 @@ header {
     position: relative;
 }
 
-/* 圣母像区域 */
-.mary-section {
+/* Joan像区域（原圣母像区域） */
+.joan-section { /* 修改：.mary-section → .joan-section */
     text-align: center;
     margin-bottom: 60px;
     position: relative;
@@ -101,12 +101,12 @@ header {
     50% { opacity: 1; transform: scale(1.2); }
 }
 
-.mary-container {
+.joan-container { /* 修改：.mary-container → .joan-container */
     position: relative;
     display: inline-block;
 }
 
-.mary-image {
+.joan-image { /* 修改：.mary-image → .joan-image */
     width: 400px;
     height: 500px;
     object-fit: cover;
@@ -269,7 +269,7 @@ footer {
         font-size: 2.5em;
     }
     
-    .mary-image {
+    .joan-image { /* 修改：.mary-image → .joan-image */
         width: 300px;
         height: 375px;
     }
